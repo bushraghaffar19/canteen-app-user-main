@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "613978332502",
+    "firebase_url": "https://food-ordering-a6587-default-rtdb.firebaseio.com",
+    "project_id": "food-ordering-a6587",
+    "storage_bucket": "food-ordering-a6587.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613978332502:android:cd6635d56331d86e5ccaf7",
+        "android_client_info": {
+          "package_name": "com.example.canteen_ordering_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613978332502-b9v2jttm7vfd2hno88daqni1jupquu9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnIl3exMo4Lm6HHN8m-uwiXB3LHdvFaGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613978332502-b9v2jttm7vfd2hno88daqni1jupquu9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
