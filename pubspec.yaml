@@ -56,6 +56,8 @@ dependencies:
   percent_indicator: ^4.2.2
   intl: ^0.18.0
   flutter_staggered_animations: ^1.1.1
+  jazzcash_flutter: ^1.0.5
+  fluttertoast: ^8.2.2
 
 
 dev_dependencies:

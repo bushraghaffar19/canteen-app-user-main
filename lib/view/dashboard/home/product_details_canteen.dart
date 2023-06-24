@@ -143,7 +143,10 @@ class _CanteenDetailScreenState extends State<CanteenDetailScreen> {
                         );
                       }
                       else{
-                        cartController.addProductToCart(widget.productModel);
+                        //cartController.addProductToCart(widget.productModel);
+                        if (cartController != null && widget.productModel != null) {
+                          cartController.addProductToCart(widget.productModel);
+                        }
                       }
                     },
                     child: Container(

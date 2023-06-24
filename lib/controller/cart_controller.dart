@@ -18,10 +18,17 @@ class CartController extends GetxController {
   }
 
   void addProductToCart(ProductModel product) {
-    if (_isItemAlreadyAdded(product)) {
+   /* if (_isItemAlreadyAdded(product)) {
       Get.snackbar("Check your cart",
           "${product.name} is already added",
           colorText: Colors.black
+      );
+    }*/
+    if (userController.userData.value.cart != null && _isItemAlreadyAdded(product)) {
+      Get.snackbar(
+        "Check your cart",
+        "${product.name} is already added",
+        colorText: Colors.black,
       );
     }
     else if (_isItemFromDifferentCanteen(product) == true) {
@@ -78,7 +85,7 @@ class CartController extends GetxController {
     }
   }
 
-  bool _isItemAlreadyAdded(ProductModel product) =>
+ /* bool _isItemAlreadyAdded(ProductModel product) =>
       userController.userData.value.cart!.where((item) => item.product?.id == product.id)
           .isNotEmpty;
 
@@ -90,8 +97,21 @@ class CartController extends GetxController {
       else {
         return true;
       }
+    }*/
+  bool _isItemAlreadyAdded(ProductModel product) =>
+      userController.userData.value.cart?.where((item) => item.product?.id == product.id)
+          .isNotEmpty ?? false;
+
+  bool? _isItemFromDifferentCanteen(ProductModel product) {
+    if (userController.userData.value.cart != null && userController.userData.value.cart!.isNotEmpty) {
+      if (userController.userData.value.cart!.first.product?.userId == product.userId) {
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      return null;
     }
-    return null;
   }
 
   void decreaseQuantity(CartItemModel item){

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../jazzcash_payment.dart';
 import '../../../stripe/stripe_process_payment.dart';
 import '../../../widgets/custom_textfield.dart';
 import '../../../widgets/loading_widget.dart';
@@ -163,11 +164,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 GestureDetector(
                   onTap: (){
                     // Get.to(() => const OrderPlaceSuccessfully());
-                    if(selectedIndex == 2 ||selectedIndex == 3){
+                    if(selectedIndex == 2 ){
                       Get.snackbar("Not defined",
                           "This payment is not defined yet please select another method",
-                        colorText: Colors.black
+                          colorText: Colors.black
                       );
+                    }
+                    else if(selectedIndex == 3){
+                      orderController.roomNo = _addressTextEditingController.text;
+                      orderController.paymentStatus = 'Success';
+                      orderController.paymentMethod = selectedMethod;
+                      JazzCash().payment();
                     }
                     else if(selectedIndex == 0){
                       loadingDialogue(context:context,);

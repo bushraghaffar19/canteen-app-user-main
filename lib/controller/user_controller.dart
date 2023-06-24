@@ -155,10 +155,13 @@ class UserController extends GetxController{
         );
       });
   }
-  Future<void> updateUserData(Map<String, dynamic> data) async{
+ /* Future<void> updateUserData(Map<String, dynamic> data) async{
     await userReference
         .doc(firebaseUser.value?.uid)
         .update(data);
+  }*/
+  Future<void> updateUserData(Map<String, dynamic> data) async {
+    await userReference.doc(firebaseUser.value?.uid).set(data, SetOptions(merge: true));
   }
   Future<void> resetPassword(String email, context) async {
     loadingDialogue(context: context);
