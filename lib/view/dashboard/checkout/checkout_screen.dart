@@ -1,18 +1,28 @@
 import 'package:canteen_ordering_user/Constant/constant.dart';
+import 'package:canteen_ordering_user/controller/order_controller.dart';
 import 'package:canteen_ordering_user/model/cart_model.dart';
+import 'package:canteen_ordering_user/model/order_model.dart';
 import 'package:canteen_ordering_user/view/dashboard/checkout/place_order_successfully.dart';
 import 'package:canteen_ordering_user/view/dashboard/checkout/widgets/show_payment_method_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../jazzcash_payment.dart';
+import 'package:canteen_ordering_user/model/order_model.dart';
+import 'package:canteen_ordering_user/model/user_model.dart';
+import 'package:intl/intl.dart';
+
+import '../../../jazzcash.dart';
 import '../../../stripe/stripe_process_payment.dart';
 import '../../../widgets/custom_textfield.dart';
 import '../../../widgets/loading_widget.dart';
+import 'cash-on-counter.dart';
 
 class CheckoutScreen extends StatefulWidget {
+
   const CheckoutScreen({Key? key}) : super(key: key);
 
   @override
@@ -43,6 +53,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     final size = MediaQuery.of(context).size;
     final h = size.height;
     final w = size.width;
@@ -64,12 +75,18 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                children: [
                  Padding(
                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                   child: Text("Teacher Room #",
-                     style: GoogleFonts.inter(
-                         fontSize: 18,
-                         fontWeight: FontWeight.w700,
-                         color: Colors.black
-                     ),),
+                   child: Row(
+                     children: [
+                       Text(
+                         "Teacher Room #",
+                         style: GoogleFonts.inter(
+                           fontSize: 18,
+                           fontWeight: FontWeight.w700,
+                           color: Colors.black,
+                         ),
+                       ),
+                     ],
+                   ),
                  ),
                  const SizedBox(height: 10,),
                  Padding(
@@ -171,10 +188,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       );
                     }
                     else if(selectedIndex == 3){
-                      orderController.roomNo = _addressTextEditingController.text;
+                      /*orderController.roomNo = _addressTextEditingController.text;
                       orderController.paymentStatus = 'Success';
                       orderController.paymentMethod = selectedMethod;
-                      JazzCash().payment();
+                      JazzCashScreen();*/
+                      Get.snackbar("Not defined",
+                          "This payment is not defined yet please select another method",
+                          colorText: Colors.black
+                      );
                     }
                     else if(selectedIndex == 0){
                       loadingDialogue(context:context,);
@@ -182,7 +203,21 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       orderController.paymentStatus = 'pending';
                       orderController.paymentMethod = selectedMethod;
                       orderController.placeOrder(context);
+
                     }
+                    /*
+                    else if (selectedIndex == 0) {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return OrderReceiptBottomSheet();
+                        },
+                      );
+                      orderController.roomNo = _addressTextEditingController.text;
+                      orderController.paymentStatus = 'pending';
+                      orderController.paymentMethod = selectedMethod;
+                    }*/
+
                     else{
                       orderController.roomNo = _addressTextEditingController.text;
                       orderController.paymentStatus = 'Success';

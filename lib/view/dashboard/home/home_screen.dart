@@ -8,6 +8,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:badges/badges.dart' as badges;
+import '../../../model/order_model.dart';
+import '../../../model/user_model.dart';
 import 'favourite_product.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
                 onPressed: (){
-                  Get.to(const CartScreen(),
+                  Get.to(CartScreen(),
                       duration: const Duration(seconds: 2), //duration of transitions, default 1 sec
                       transition: Transition.cupertinoDialog
                   );
@@ -136,7 +138,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const Spacer(),
                                 GestureDetector(
                                   onTap: () {
-                                    Get.to(() =>  CanteenProducts(canteenModel: canteenController.canteens[i],),
+                                    Get.to(() =>  CanteenProducts(
+                                      canteenModel: canteenController.canteens[i],),
                                         duration: const Duration(seconds: 2), //duration of transitions, default 1 sec
                                         transition: Transition.cupertinoDialog
                                     );

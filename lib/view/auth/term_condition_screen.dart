@@ -21,40 +21,53 @@ class TermAndConditions extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20,),
-              Text("Title 1",style: GoogleFonts.inter(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black
-              ),),
               const SizedBox(height: 10,),
-              Text("Lörem ipsum nyn trinera mikrod predesk kode decide. Bepinde semimurade i homonas. Gotoktig disam dias spegode i legga dediktisk om än tosk. Infratevis miness megasat EU-migrant medan eurorissa pyv jag dopire. Isongar der fast gusade kaning. Trende bev bessade, kros tor och peskapet och osk i tinde. Tenihet kvasiren ode. Mure nev cynmani.",style: GoogleFonts.inter(
+              Text(" Welcome to Foodie. By using our services, you agree to comply with and be bound by the following terms and conditions."
+                  " Please read these terms carefully before using our app:",style: GoogleFonts.inter(
                   fontSize: 16,
                   height: 1.5,
                   fontWeight: FontWeight.w400,
                   color: kLightGreyColor
               ),),
               const SizedBox(height: 20,),
-              Text("Title 2",style: GoogleFonts.inter(
+              Text("Acceptance of Terms:",style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.black
               ),),
               const SizedBox(height: 10,),
-              Text("Lörem ipsum nyn trinera mikrod predesk kode decide. Bepinde semimurade i homonas. Gotoktig disam dias spegode i legga dediktisk om än tosk. Infratevis miness megasat EU-migrant medan eurorissa pyv jag dopire. Isongar der fast gusade kaning. Trende bev bessade, kros tor och peskapet och osk i tinde. Tenihet kvasiren ode. Mure nev cynmani.",style: GoogleFonts.inter(
+              Text("By accessing and using Foodie, you acknowledge that you have read, "
+                  "understood, and agreed to abide by these terms and conditions, as well as our Privacy Policy.",style: GoogleFonts.inter(
                   fontSize: 16,
                   height: 1.5,
                   fontWeight: FontWeight.w400,
                   color: kLightGreyColor
               ),),
               const SizedBox(height: 20,),
-              Text("Title 3",style: GoogleFonts.inter(
+              Text("Ordering Food:",style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.black
               ),),
               const SizedBox(height: 10,),
-              Text("Lörem ipsum nyn trinera mikrod predesk kode decide. Bepinde semimurade i homonas. Gotoktig disam dias spegode i legga dediktisk om än tosk. Infratevis miness megasat EU-migrant medan eurorissa pyv jag dopire. Isongar der fast gusade kaning. Trende bev bessade, kros tor och peskapet och osk i tinde. Tenihet kvasiren ode. Mure nev cynmani.",style: GoogleFonts.inter(
+              Text("Our app allows you to place orders for food from various canteen and eateries. "
+                  "The accuracy of the order details, including delivery location, food items, and any specific dietary preferences,"
+                  " is your responsibility.",style: GoogleFonts.inter(
+                  fontSize: 16,
+                  height: 1.5,
+                  fontWeight: FontWeight.w400,
+                  color: kLightGreyColor
+              ),),
+              const SizedBox(height: 20,),
+              Text("User Account:",style: GoogleFonts.inter(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black
+              ),),
+              const SizedBox(height: 10,),
+              Text("To place orders through our app, you may be required to create a user account. "
+                  "You are responsible for maintaining the confidentiality of your account credentials and "
+                  "for all activities that occur under your account.",style: GoogleFonts.inter(
                   fontSize: 16,
                   height: 1.5,
                   fontWeight: FontWeight.w400,

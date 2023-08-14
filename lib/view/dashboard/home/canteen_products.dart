@@ -8,7 +8,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/canteen_model.dart';
 import '../../../model/category_model.dart';
+import '../../../model/order_model.dart';
 import '../../../model/product_model.dart';
+import '../../../model/user_model.dart';
 import 'favourite_product.dart';
 import 'widgets/canteen_products_widget.dart';
 
@@ -79,7 +81,7 @@ class _CanteenProductsState extends State<CanteenProducts> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
-            Get.to(const CartScreen(),
+            Get.to(CartScreen(),
                 duration: const Duration(seconds: 2), //duration of transitions, default 1 sec
                 transition: Transition.cupertinoDialog
             );

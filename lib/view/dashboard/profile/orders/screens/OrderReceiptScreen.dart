@@ -1,19 +1,22 @@
-import 'package:canteen_ordering_user/Constant/app_fonts.dart';
-import 'package:canteen_ordering_user/Constant/constant.dart';
 import 'package:canteen_ordering_user/view/dashboard/profile/orders/widgets/order_container.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
-class OrdersScreen extends StatelessWidget {
-  const OrdersScreen({super.key});
+import 'package:canteen_ordering_user/view/dashboard/checkout/place_order_successfully.dart';
+import '../../../../../Constant/app_fonts.dart';
+import '../../../../../Constant/constant.dart';
 
+class OrderReceiptScreen extends StatelessWidget {
+
+  const OrderReceiptScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Orders',
+          'Orders Receipt',
           style: AppFonts.kFont16ptBold,
         ),
       ),
@@ -22,7 +25,7 @@ class OrdersScreen extends StatelessWidget {
       AnimationLimiter(
         child: ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          itemCount: orderController.allUserOrders.length,
+          itemCount: 1,
           itemBuilder: (context, index) => AnimationConfiguration.staggeredList(
             position: index,
             duration: const Duration(seconds: 2),
@@ -30,7 +33,7 @@ class OrdersScreen extends StatelessWidget {
               horizontalOffset: 50.0,
               child: FadeInAnimation(
                 child: OrderContainer(
-                  orders: orderController.allUserOrders[index],
+                  orders: orderController.allUserOrders[0],
                 ),
               ),
             ),

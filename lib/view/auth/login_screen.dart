@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               }
                               else if(!EmailValidator.validate(value))
                               {
-                                return 'email address is not valid';
+                                return 'email address is not valid.\n Please remove extra space if any';
                               }
                               return null;
                             },

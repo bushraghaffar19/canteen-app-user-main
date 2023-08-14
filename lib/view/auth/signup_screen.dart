@@ -98,7 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               }
                               else if(!EmailValidator.validate(value))
                               {
-                                return 'email address is not valid';
+                                return 'email address is not valid. \n Please remove extra space if any';
                               }
                               return null;
                             },
@@ -331,16 +331,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                       ],
                     )),
-                const SizedBox(height: 35,),
-                CustomButton(
-                  title: 'Sign Up',
-                  function: (){
-                    if(_formKey.currentState!.validate()){
-                      if(!terms){
-                        Get.snackbar(
-                          colorText:Colors.black,
-                            "Accept terms and conditions",
-                            "you need to accept the terms and condition before signin process");
+                    const SizedBox(height: 35),
+                      CustomButton(
+                       title: 'Sign Up',
+                       function: () {
+                       if (_formKey.currentState!.validate()) {
+                         if (!terms) {
+                           Get.snackbar(
+                             colorText: Colors.black,
+                                "Accept terms and conditions",
+                    "You need to accept the terms and conditions before the sign-in process",
+                       );
+                        } else if (_selectedUserType == "Teacher" && _teacherIdTextEditController.text != "4201034") {
+                            Get.snackbar(
+                              colorText: Colors.black,
+                                "Teacher ID Error",
+                             "The provided Teacher ID is not valid. Please check your ID.",
+                            );
                       }
                       else{
                         UserModel userModel  = UserModel(

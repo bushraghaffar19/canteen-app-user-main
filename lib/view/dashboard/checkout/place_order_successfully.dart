@@ -6,6 +6,7 @@ import 'package:lottie/lottie.dart';
 
 import '../../../Constant/constant.dart';
 import '../../../widgets/custom_button.dart';
+import '../profile/orders/screens/OrderReceiptScreen.dart';
 import '../widgets/bottom_navigation_widgets.dart';
 
 import 'package:canteen_ordering_user/Constant/constant.dart';
@@ -84,11 +85,11 @@ class _OrderPlaceSuccessfullyState extends State<OrderPlaceSuccessfully> with Ti
             const SizedBox(height: 70,),
             CustomButton(
               title: 'Order Receipt',
-              function: (){
-                Get.to(() => const OrdersScreen(),
-                    duration: const Duration(seconds: 2), //duration of transitions, default 1 sec
-                    transition: Transition.cupertinoDialog
-                );
+              function: () {
+                  Get.to( OrderReceiptScreen(),
+                    duration: const Duration(seconds: 2),
+                    transition: Transition.cupertinoDialog,
+                  );
               },
               buttonColor: kButtonColor,
               textColor: kButtonTextColor,

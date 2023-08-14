@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ProductModel{
   static const prodName = "product_name";
   static const prodId = "product_id";
@@ -15,6 +17,7 @@ class ProductModel{
   String? userId;
   bool? isFav;
   bool? isProductAvailable;
+  DocumentSnapshot? maindata;
   ProductModel({
     this.name,
     this.image,

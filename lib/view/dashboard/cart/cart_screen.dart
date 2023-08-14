@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:canteen_ordering_user/model/order_model.dart';
+import 'package:canteen_ordering_user/model/user_model.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -58,7 +60,7 @@ class CartScreen extends StatelessWidget {
                       itemBuilder: (context, i) {
                         return AnimationConfiguration.staggeredList(
                           position: i,
-                          duration: const Duration(seconds: 2),
+                          duration: const Duration(seconds: 1),
                           child: SlideAnimation(
                             horizontalOffset: 50.0,
                             child: FadeInAnimation(
